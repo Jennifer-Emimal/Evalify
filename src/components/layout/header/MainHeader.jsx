@@ -1,0 +1,127 @@
+
+import { useState } from "react";
+import {
+  Button,
+  Container,
+  Collapse,
+  IconButton,
+  Paper,
+} from "@mui/material";
+
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+
+import BrandLogo from "../../common/BrandLogo";
+import { NAV_ITEMS } from "../../../constants/homeContent";
+
+function MainHeader() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
+  return (
+    <Paper component="header" variant="navbarHeader">
+      <Container maxWidth="lg">
+        <Paper
+          component="nav"
+          variant="navbarInner"
+          aria-label="Main navigation"
+        >
+          <BrandLogo />
+
+          <Paper
+            component="div"
+            variant="navbarDesktopNavigation"
+          >
+            {NAV_ITEMS.map((item) => (
+              <Button
+                key={item.label}
+                component="a"
+                href={item.href}
+                variant="nav"
+              >
+                {item.label}
+              </Button>
+            ))}
+          </Paper>
+
+          <Paper
+            component="div"
+            variant="navbarDesktopActions"
+          >
+            <Button variant="signIn">
+              Sign in
+            </Button>
+
+            <Button
+              variant="contained"
+              endIcon={<ArrowForwardIcon />}
+            >
+              Get started
+            </Button>
+          </Paper>
+
+          <IconButton
+            variant="navbarMenuToggle"
+            aria-label={
+              mobileMenuOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+            }
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
+            onClick={() =>
+              setMobileMenuOpen((prev) => !prev)
+            }
+          >
+            {mobileMenuOpen ? (
+              <CloseRoundedIcon />
+            ) : (
+              <MenuRoundedIcon />
+            )}
+          </IconButton>
+        </Paper>
+
+        <Collapse in={mobileMenuOpen} unmountOnExit>
+          <Paper
+            id="mobile-navigation"
+            component="div"
+            variant="navbarMobileNavigation"
+          >
+            {NAV_ITEMS.map((item) => (
+              <Button
+                key={item.label}
+                component="a"
+                href={item.href}
+                variant="mobileNav"
+                onClick={closeMobileMenu}
+              >
+                {item.label}
+              </Button>
+            ))}
+
+            <Button
+              variant="mobileSignIn"
+              onClick={closeMobileMenu}
+            >
+              Sign in
+            </Button>
+
+            <Button
+              variant="contained"
+              endIcon={<ArrowForwardIcon />}
+              onClick={closeMobileMenu}
+            >
+              Get started
+            </Button>
+          </Paper>
+        </Collapse>
+      </Container>
+    </Paper>
+  );
+}
+
+export default MainHeader;
