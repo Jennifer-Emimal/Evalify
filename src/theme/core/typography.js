@@ -1,16 +1,16 @@
 
 const typography = {
-  fontFamily: "sans-serif",
+  fontFamily: '"Inter", "Plus Jakarta Sans", sans-serif',
 
   h1: {
-    fontSize: "3.55rem",
+    fontSize: "3.25rem",
     fontWeight: 700,
     lineHeight: 1.1,
     letterSpacing: "-0.035em",
   },
 
   h2: {
-    fontSize: "2.55rem",
+    fontSize: "2.35rem",
     fontWeight: 700,
     lineHeight: 1.2,
     letterSpacing: "-0.025em",
@@ -54,13 +54,13 @@ const typography = {
   },
 
   body1: {
-    fontSize: "1.05rem",
+    fontSize: "0.98rem",
     fontWeight: 400,
     lineHeight: 1.6,
   },
 
   body2: {
-    fontSize: "0.9rem",
+    fontSize: "0.875rem",
     fontWeight: 400,
     lineHeight: 1.6,
   },
@@ -86,67 +86,76 @@ const typography = {
   },
 
   brandLogo: {
-    fontSize: "1.1rem",
+    fontSize: "0.98rem",
     fontWeight: 800,
     lineHeight: 1.3,
     letterSpacing: "-0.04em",
   },
 
+  // Hero heading
   heroTitle: {
-    fontSize: "2.7rem",
+    fontSize: "2.85rem",
     fontWeight: 700,
-    lineHeight: 1.1,
-    letterSpacing: "-0.035em",
+    lineHeight: 1.06,
+    letterSpacing: "-0.045em",
+
     "@media (min-width:600px)": {
-      fontSize: "3.3rem",
+      fontSize: "3.25rem",
     },
+
     "@media (min-width:1200px)": {
       fontSize: "3.9rem",
     },
   },
 
+  // Hero description
   heroDescription: {
-    fontSize: "0.95rem",
+    fontSize: "1rem",
     fontWeight: 400,
-    lineHeight: 1.7,
+    lineHeight: 1.65,
   },
 
   heroBadgeText: {
-    fontSize: "0.76rem",
-    fontWeight: 600,
+    fontSize: "0.68rem",
+    fontWeight: 700,
     lineHeight: 1.5,
   },
 
+  // Small uppercase label above the hero heading
   sectionLabel: {
-    fontSize: "0.76rem",
+    fontSize: "0.7rem",
     fontWeight: 800,
     lineHeight: 1.6,
     letterSpacing: "0.15em",
     textTransform: "uppercase",
   },
 
+  // Hero statistics
   heroStatValue: {
-    fontSize: "1.4rem",
-    fontWeight: 600,
+    fontSize: "1.5rem",
+    fontWeight: 700,
     lineHeight: 1.3,
     whiteSpace: "nowrap",
+
     "@media (min-width:600px)": {
-      fontSize: "1.65rem",
+      fontSize: "1.7rem",
     },
   },
 
   heroStatLabel: {
-    fontSize: "0.75rem",
+    fontSize: "0.72rem",
     fontWeight: 400,
     lineHeight: 1.5,
   },
-    sectionTitle: {
-    fontSize: "2.55rem",
+
+  sectionTitle: {
+    fontSize: "2.25rem",
     fontWeight: 700,
     lineHeight: 1.2,
     letterSpacing: "-0.025em",
+
     "@media (max-width:599px)": {
-      fontSize: "2rem",
+      fontSize: "1.85rem",
     },
   },
 

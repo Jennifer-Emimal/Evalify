@@ -52,18 +52,20 @@ function PricingSection() {
           viewport={pricingStyles.viewport}
           transition={{ duration, ease: easing }}
         >
-          <Stack sx={pricingStyles.header}>
-            <SectionLabel>Simple pricing</SectionLabel>
+          <Box sx={pricingStyles.header}>
+            <Box>
+              <SectionLabel align="left">Simple pricing</SectionLabel>
 
-            <Typography
-              component="h2"
-              variant="sectionTitle"
-              sx={pricingStyles.heading}
-            >
-              Start free.{" "}
-              <GradientText>Scale when </GradientText>
-              you're ready.
-            </Typography>
+              <Typography
+                component="h2"
+                variant="sectionTitle"
+                sx={pricingStyles.heading}
+              >
+                Start free.{" "}
+                <GradientText>Scale when </GradientText>
+                you're ready.
+              </Typography>
+            </Box>
 
             <Box sx={pricingStyles.billingToggle}>
               <Button
@@ -96,7 +98,7 @@ function PricingSection() {
                 </Box>
               </Button>
             </Box>
-          </Stack>
+          </Box>
         </Box>
 
         <Box sx={pricingStyles.grid}>

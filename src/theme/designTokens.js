@@ -6,20 +6,31 @@ const designTokens = {
 
   // Shared gradients
   gradients: {
-    hero: "linear-gradient(115deg, #F8FAFF 0%, #EDF6FF 55%, #F9F7FF 100%)",
-    PurpleBlue: "linear-gradient(100deg, #a200ff 0%, #0084ff 100%)",
-    cta: "linear-gradient(110deg, #DDF4FF 0%, #E8E7FF 100%)",
+    hero: "linear-gradient(115deg, #FFFFFF 0%, #FBFBFA 55%, #FFFFFF 100%)",
+    PurpleBlue: "linear-gradient(100deg, #356FF6 0%, #2459D8 100%)",
+    cta: "linear-gradient(110deg, #F2F5FB 0%, #EEF3FF 100%)",
+    ctaBanner:
+      "radial-gradient(ellipse at 86% 50%, rgba(80, 107, 145, 0.3), transparent 36%), linear-gradient(110deg, #090D12 0%, #1B232C 56%, #090D12 100%)",
   },
 
   // Shared shadows
   customShadows: {
-    card: "0 8px 28px rgba(39, 75, 120, 0.07)",
-    cardHover: "0 12px 32px rgba(39, 75, 120, 0.1)",
-    button: "0 5px 15px rgba(7, 49, 58, 0.12)",
+    card: "0 5px 18px rgba(17, 24, 32, 0.045)",
+    cardHover: "0 10px 24px rgba(17, 24, 32, 0.08)",
+    button: "0 3px 10px rgba(17, 24, 32, 0.12)",
   },
 
   imageTokens: {
     edgeMask: "radial-gradient(ellipse at center, #000 86%, transparent 100%)",
+    showcaseFade: `
+  radial-gradient(
+    ellipse at center,
+    #000 50%,
+    rgba(0, 0, 0, 0.95) 50%,
+    rgba(0, 0, 0, 0.65) 50%,
+    transparent 100%
+  )
+`,
     ctaMaxWidth: { xs: 480, sm: 560, md: 620, lg: 720 },
   },
 
@@ -54,8 +65,8 @@ const designTokens = {
   // Shared section layout tokens
   sectionTokens: {
     paddingY: {
-      xs: 5,
-      md: 7,
+      xs: 4,
+      md: 5.5,
     },
 
     headingMarginBottom: {
@@ -80,6 +91,12 @@ const designTokens = {
 
     iconSize: 5.75,
     iconFontSize: 3.125,
+    horizontalContentGutter: {
+      xs: 3,
+      sm: 5,
+      lg: 9,
+    },
+    howItWorksTitleFontSize: "3.75rem",
 
     connectorOffset: 5.875,
     connectorThickness: 0.25,
@@ -92,11 +109,11 @@ const designTokens = {
   showcaseTokens: {
     columns: {
       xs: "1fr",
-      md: "0.8fr 1.2fr",
-      lg: "0.75fr 1.25fr",
+      md: "1fr",
+      lg: "0.8fr 1.2fr",
     },
     gap: { xs: 4, md: 3 },
-    contentMaxWidth: 400,
+    contentMaxWidth: 480,
     descriptionMargin: 2,
     benefitsMargin: 3,
     benefitGap: 1.2,

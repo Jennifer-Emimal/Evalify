@@ -3,14 +3,12 @@ import {
   Card,
   CardContent,
   Container,
-  Stack,
   Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { motion } from "motion/react";
 
 import SectionLabel from "../../../components/common/SectionLabel";
-import GradientText from "../../../components/common/GradientText";
 import { FEATURES } from "../../../constants/homeContent";
 import useMotionSettings from "../../../hooks/useMotionSettings";
 
@@ -48,39 +46,45 @@ function FeaturesSection() {
           viewport={{ once: true }}
           transition={{ duration, ease: easing }}
         >
-          <Stack
+          <Box
             sx={{
-              alignItems: "center",
-              textAlign: "center",
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", md: "1.2fr 0.8fr" },
+              alignItems: "end",
+              columnGap: { xs: 1.5, md: 5 },
               mb: {
                 xs: sectionTokens.headingMarginBottom.xs,
                 md: sectionTokens.headingMarginBottom.md,
               },
             }}
           >
-            <SectionLabel>Everything you need</SectionLabel>
+            <Box>
+              <SectionLabel align="left">Powerful features</SectionLabel>
 
-            <Typography
-              component="h2"
-              variant="sectionTitle"
-              sx={{ color: "text.primary" }}
-            >
-              Built for modern hiring{" "}
-              <GradientText>teams.</GradientText>
-            </Typography>
+              <Typography
+                component="h2"
+                variant="sectionTitle"
+                sx={{ color: "text.primary" }}
+              >
+                Everything you need
+                <br />
+                to hire better.
+              </Typography>
+            </Box>
 
             <Typography
               variant="sectionDescription"
               sx={{
                 color: "text.secondary",
-                maxWidth: featureTokens.headingMaxWidth,
-                mt: featureTokens.headingDescriptionMarginTop,
+                maxWidth: 420,
+                mt: 0,
+                mb: { xs: 0, md: 1 },
               }}
             >
-              From AI interviews to detailed analytics, Evalify gives you
-              all the tools to streamline your hiring process.
+              Modern tools to evaluate, compare and make confident hiring
+              decisions — built for today's teams.
             </Typography>
-          </Stack>
+          </Box>
         </motion.div>
 
         {/* Feature cards */}
@@ -153,6 +157,9 @@ function FeaturesSection() {
                 >
                   <CardContent
                     sx={{
+                      display: "grid",
+                      gridTemplateColumns: "42px minmax(0, 1fr)",
+                      columnGap: 1.75,
                       p: {
                         xs: featureTokens.cardPadding.xs,
                         md: featureTokens.cardPadding.md,
@@ -170,12 +177,13 @@ function FeaturesSection() {
                     <Box
                       className="grid-center feature-icon"
                       sx={{
-                        width: theme.spacing(featureTokens.iconSize),
-                        height: theme.spacing(featureTokens.iconSize),
-                        borderRadius: featureTokens.iconRadius,
+                        gridRow: "1 / span 2",
+                        width: theme.spacing(5),
+                        height: theme.spacing(5),
+                        borderRadius: "50%",
                         bgcolor: theme.palette.accentSurface[background],
                         color: theme.palette.accent[color],
-                        mb: featureTokens.iconMarginBottom,
+                        mb: 0,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -203,7 +211,7 @@ function FeaturesSection() {
                       variant={featureTokens.descriptionVariant}
                       sx={{
                         color: "text.secondary",
-                        mt: featureTokens.descriptionMarginTop,
+                        mt: 0.5,
                         maxWidth: featureTokens.descriptionMaxWidth,
                       }}
                     >

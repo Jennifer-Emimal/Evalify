@@ -1,56 +1,56 @@
 
 const palette = {
   primary: {
-    main: "#07313A",
-    dark: "#05252C",
-    light: "#1B5962",
+    main: "#111820",
+    dark: "#080D12",
+    light: "#303A45",
     contrastText: "#FFFFFF",
   },
 
   secondary: {
-    main: "#20BFA5",
-    dark: "#119C89",
-    light: "#73E0CD",
+    main: "#356FF6",
+    dark: "#2459D8",
+    light: "#91B1FF",
     contrastText: "#FFFFFF",
   },
 
   background: {
-    default: "#F7F9FD",
+    default: "#FFFFFF",
     paper: "#FFFFFF",
-    hero: "#F5F8FD",
-    soft: "#EEF5FC",
-    accent: "#EAF8FC",
+    hero: "#FBFBFA",
+    soft: "#e6e6e6",
+    accent: "#EEF3FF",
   },
 
   text: {
-    primary: "#101828",
-    secondary: "#64748B",
-    disabled: "#A5B0C0",
-    muted: "#8097AD",
+    primary: "#111820",
+    secondary: "#626B75",
+    disabled: "#A7ADB4",
+    muted: "#88919A",
   },
 
-  divider: "#E6ECF3",
+  divider: "#E8EAED",
 
   accent: {
-    teal: "#00fdd3",
-    blue: "#0084ff",
-    purple: "#4c00ff",
-    pink: "#ff00d0",
-    green: "#37C99A",
+    teal: "#18B894",
+    blue: "#356FF6",
+    purple: "#8B5CF6",
+    pink: "#E879A9",
+    green: "#20A779",
     lime: "#84CC16",
-    navigation: "#5135C7",
-    orange: "#FFB45E",
-    yellow: "#F5D477",
+    navigation: "#356FF6",
+    orange: "#E79A44",
+    yellow: "#F5C451",
   },
 
   accentSurface: {
-    green: "#DDF8EB",
-    purple: "#F0E5FF",
-    blue: "#E0EEFF",
-    orange: "#FFF0D2",
-    pink: "#FFE4EB",
-    lavender: "#E8E7FF",
-    trust: "rgba(20, 184, 166, 0.12)",
+    green: "#E7F7F1",
+    purple: "#F2ECFF",
+    blue: "#EAF0FF",
+    orange: "#FFF3E2",
+    pink: "#FFF0F5",
+    lavender: "#F0EDFF",
+    trust: "rgba(53, 111, 246, 0.10)",
   },
 };
 

@@ -1,4 +1,5 @@
 import AutoAwesomeOutlinedIcon from "@mui/icons-material/AutoAwesomeOutlined";
+import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import BoltOutlinedIcon from "@mui/icons-material/BoltOutlined";
 import BubbleChartIcon from "@mui/icons-material/BubbleChart";
 import ChangeHistoryIcon from "@mui/icons-material/ChangeHistory";
@@ -9,7 +10,6 @@ import GraphicEqIcon from "@mui/icons-material/GraphicEq";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import HubIcon from "@mui/icons-material/Hub";
 import HubOutlinedIcon from "@mui/icons-material/HubOutlined";
-import InsightsOutlinedIcon from "@mui/icons-material/InsightsOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import SyncAltOutlinedIcon from "@mui/icons-material/SyncAltOutlined";
 import TrackChangesOutlinedIcon from "@mui/icons-material/TrackChangesOutlined";
@@ -24,15 +24,15 @@ import XIcon from "@mui/icons-material/X";
 
 export const NAV_ITEMS = [
   { label: "Product", href: "#interview-showcase" },
-  { label: "Features", href: "#features" },
+  { label: "Solutions", href: "#how-it-works" },
   { label: "Pricing", href: "#pricing" },
   { label: "Resources", href: "#testimonials" },
 ];
 
 export const HERO_STATS = [
-  { value: "70%", label: "Faster hiring" },
-  { value: "4x", label: "More accurate evaluations" },
-  { value: "50+", label: "Skills supported" },
+  { value: "70%", label: "Less time to hire" },
+  { value: "4x", label: "Faster reviews" },
+  { value: "50+", label: "Skills assessed" },
 ];
 
 export const TRUSTED_COMPANIES = [
@@ -50,38 +50,42 @@ export const HOW_IT_WORKS_STEPS = [
   {
     number: "01",
     title: "Create a role",
-    description: "Define the job, skills and preferences in minutes.",
+    description:
+      "Add job details, required skills and customize the interview experience.",
     Icon: DescriptionOutlinedIcon,
     iconColor: "blue",
   },
   {
     number: "02",
-    title: "AI interviews",
-    description: "Candidates take AI-driven interviews, anytime, anywhere.",
-    Icon: VideocamOutlinedIcon,
+    title: "Generate interviews",
+    description:
+      "Evalify creates role-specific questions using AI based on your requirements.",
+    Icon: AutoAwesomeOutlinedIcon,
     iconColor: "purple",
   },
   {
     number: "03",
-    title: "Get evaluations",
-    description: "AI analyses responses and generates detailed reports.",
-    Icon: InsightsOutlinedIcon,
-    iconColor: "orange",
+    title: "Conduct & evaluate",
+    description:
+      "Candidates take AI interviews with real-time evaluation and detailed insights.",
+    Icon: GroupsOutlinedIcon,
+    iconColor: "green",
   },
   {
     number: "04",
-    title: "Make the hire",
-    description: "Shortlist the best-fit candidates with confidence.",
-    Icon: GroupsOutlinedIcon,
+    title: "Make the right hire",
+    description:
+      "Review reports, compare candidates and hire the best talent faster.",
+    Icon: BarChartOutlinedIcon,
     iconColor: "orange",
   },
 ];
 
 export const INTERVIEW_BENEFITS = [
-  "AI-generated questions",
-  "Real-time speech & code analysis",
-  "Bias-free and consistent evaluations",
-  "Detailed reports & scorecards",
+  "Adaptive, human-like interviews",
+  "Skill-based evaluation",
+  "Bias-aware and consistent",
+  "Multi-language support",
 ];
 
 export const FEATURES = [

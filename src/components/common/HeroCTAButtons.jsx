@@ -2,7 +2,7 @@ import { Button, Stack } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
-function HeroCTAButtons({ sx = {} }) {
+function HeroCTAButtons({ sx = {}, inverted = false }) {
   return (
     <Stack
       direction="row"
@@ -12,21 +12,39 @@ function HeroCTAButtons({ sx = {} }) {
       <Button
         variant="contained"
         endIcon={<ArrowForwardIcon />}
+        sx={
+          inverted
+            ? {
+                bgcolor: "common.white",
+                color: "primary.main",
+                "&:hover": { bgcolor: "grey.100" },
+              }
+            : undefined
+        }
       >
-        Start free trial
+        Start free
       </Button>
 
       <Button
         startIcon={<PlayArrowIcon />}
         sx={{
-          backgroundColor: "background.paper",
-          color: "text.primary",
+          backgroundColor: inverted ? "transparent" : "background.paper",
+          color: inverted ? "common.white" : "text.primary",
+          border: "1px solid",
+          borderColor: inverted
+            ? "rgba(255, 255, 255, 0.35)"
+            : "divider",
           "&:hover": {
-            backgroundColor: "background.soft",
+            backgroundColor: inverted
+              ? "rgba(255, 255, 255, 0.08)"
+              : "background.soft",
+            borderColor: inverted
+              ? "rgba(255, 255, 255, 0.55)"
+              : "divider",
           },
         }}
       >
-        Watch demo
+        Watch video
       </Button>
     </Stack>
   );

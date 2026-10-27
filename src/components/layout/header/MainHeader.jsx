@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import {
   Button,
@@ -24,7 +23,7 @@ function MainHeader() {
 
   return (
     <Paper component="header" variant="navbarHeader">
-      <Container maxWidth="lg">
+      <Container maxWidth={false} disableGutters>
         <Paper
           component="nav"
           variant="navbarInner"
@@ -32,6 +31,7 @@ function MainHeader() {
         >
           <BrandLogo />
 
+          {/* Desktop navigation: all links share equal spacing */}
           <Paper
             component="div"
             variant="navbarDesktopNavigation"
@@ -48,6 +48,7 @@ function MainHeader() {
             ))}
           </Paper>
 
+          {/* Desktop actions */}
           <Paper
             component="div"
             variant="navbarDesktopActions"
@@ -64,6 +65,7 @@ function MainHeader() {
             </Button>
           </Paper>
 
+          {/* Mobile menu toggle */}
           <IconButton
             variant="navbarMenuToggle"
             aria-label={
@@ -85,6 +87,7 @@ function MainHeader() {
           </IconButton>
         </Paper>
 
+        {/* Mobile navigation */}
         <Collapse in={mobileMenuOpen} unmountOnExit>
           <Paper
             id="mobile-navigation"

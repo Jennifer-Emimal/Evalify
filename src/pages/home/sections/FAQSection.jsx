@@ -75,22 +75,7 @@ function FAQSection() {
             </Box>
 
             {/* Support card */}
-            <Paper sx={faqStyles.supportCard}>
               <Box sx={faqStyles.supportContent}>
-                <Typography
-                  variant="h3"
-                  sx={faqStyles.supportTitle}
-                >
-                  Still have questions?
-                </Typography>
-
-                <Typography
-                  variant="body2"
-                  sx={faqStyles.supportDescription}
-                >
-                  Our team can help you understand the platform.
-                </Typography>
-
                 <Button
                   variant="contained"
                   endIcon={<ArrowForwardRoundedIcon />}
@@ -99,7 +84,6 @@ function FAQSection() {
                   Contact support
                 </Button>
               </Box>
-            </Paper>
           </Box>
 
           {/* Right column: FAQ list */}

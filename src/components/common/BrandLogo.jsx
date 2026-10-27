@@ -1,6 +1,6 @@
 
 import { Paper, Stack, Typography } from "@mui/material";
-import AutoAwesomeRoundedIcon from "@mui/icons-material/AutoAwesomeRounded";
+import Brightness2RoundedIcon from "@mui/icons-material/Brightness2Rounded";
 
 function BrandLogo() {
   return (
@@ -14,7 +14,7 @@ function BrandLogo() {
       }}
     >
       <Paper variant="brandLogoIcon">
-        <AutoAwesomeRoundedIcon />
+        <Brightness2RoundedIcon />
       </Paper>
 
       <Typography

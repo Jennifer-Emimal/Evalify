@@ -1,10 +1,7 @@
 
-import { Container, Paper, Stack, Typography } from "@mui/material";
+import { Paper, Stack, Typography } from "@mui/material";
 import { motion } from "motion/react";
 
-import CheckIcon from "@mui/icons-material/Check";
-
-import GradientText from "../../../components/common/GradientText";
 import HeroCTAButtons from "../../../components/common/HeroCTAButtons";
 import heroDashboard from "../../../assets/hero-dashboard.png";
 import { HERO_STATS } from "../../../constants/homeContent";
@@ -21,48 +18,43 @@ function HeroSection() {
 
   return (
     <Paper component="section" variant="heroSection">
-      <Container maxWidth="lg">
         <Paper component="div" variant="heroGrid">
           {/* Left content */}
           <Paper component="div" variant="heroLeftContent">
             {/* Platform badge */}
-            <Paper component="div" variant="heroBadge">
-              <Paper component="div" variant="heroBadgeIcon">
-                <CheckIcon variant="heroBadgeCheck" />
-              </Paper>
-
-              <Typography
-                variant="heroBadgeText"
-                color="text.secondary"
-              >
-                AI-Powered Interview Platform
-              </Typography>
-            </Paper>
+            <Typography
+              component="p"
+              variant="sectionLabel"
+              color="text.secondary"
+              sx={{ mb: 2 }}
+            >
+              AI-powered hiring platform
+            </Typography>
 
             {/* Main heading */}
             <motion.div
-             initial={{
-  opacity: 0,
-  y: motionTheme.distance.medium,
-  clipPath: "inset(0 0 100% 0)",
-}}
-animate={{
-  opacity: 1,
-  y: 0,
-  clipPath: "inset(0 0 0% 0)",
-}}
-transition={{
-  duration: maskDuration,
-  ease: easing,
-}}
+              initial={{
+                opacity: 0,
+                y: motionTheme.distance.medium,
+                clipPath: "inset(0 0 100% 0)",
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                clipPath: "inset(0 0 0% 0)",
+              }}
+              transition={{
+                duration: maskDuration,
+                ease: easing,
+              }}
             >
               <Typography
                 variant="heroTitle"
                 color="text.primary"
               >
-                Interview Less.
+                Hire with
                 <br />
-                <GradientText>Evaluate More.</GradientText>
+                confidence.
               </Typography>
             </motion.div>
 
@@ -90,9 +82,9 @@ transition={{
                   variant="heroDescription"
                   color="text.secondary"
                 >
-                  AI-driven interviews, instant evaluations and
-                  detailed insights to help you hire the right
-                  talent faster.
+                  AI-powered interviews, structured evaluations and
+                  actionable insights to help you find the right talent
+                  faster.
                 </Typography>
               </Paper>
             </motion.div>
@@ -136,7 +128,10 @@ transition={{
                   }}
                   style={{ minWidth: 0 }}
                 >
-                  <Stack spacing={0} alignItems="flex-start">
+                  <Stack
+                    spacing={0}
+                    sx={{ alignItems: "flex-start" }}
+                  >
                     <Typography
                       variant="heroStatValue"
                       color="text.primary"
@@ -177,8 +172,10 @@ transition={{
               ease: easing,
             }}
             style={{
+              alignSelf: "stretch",
               minWidth: 0,
               width: "100%",
+              height: "100%",
             }}
           >
             <Paper
@@ -195,7 +192,6 @@ transition={{
             </Paper>
           </motion.div>
         </Paper>
-      </Container>
     </Paper>
   );
 }
