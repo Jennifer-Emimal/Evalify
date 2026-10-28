@@ -4,17 +4,12 @@ import BoltOutlinedIcon from "@mui/icons-material/BoltOutlined";
 import BubbleChartIcon from "@mui/icons-material/BubbleChart";
 import ChangeHistoryIcon from "@mui/icons-material/ChangeHistory";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
-import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import GraphicEqIcon from "@mui/icons-material/GraphicEq";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import HubIcon from "@mui/icons-material/Hub";
-import HubOutlinedIcon from "@mui/icons-material/HubOutlined";
-import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
-import SyncAltOutlinedIcon from "@mui/icons-material/SyncAltOutlined";
 import TrackChangesOutlinedIcon from "@mui/icons-material/TrackChangesOutlined";
 import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
-import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
 import ViewQuiltOutlinedIcon from "@mui/icons-material/ViewQuiltOutlined";
 import WaterDropIcon from "@mui/icons-material/WaterDrop";
 import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
@@ -90,46 +85,49 @@ export const INTERVIEW_BENEFITS = [
 
 export const FEATURES = [
   {
-    title: "AI question generation",
-    description: "Role-specific, skill-based questions powered by AI.",
-    Icon: AutoAwesomeOutlinedIcon,
-    color: "green",
-    background: "green",
+    title: "AI Interviewer",
+    description:
+      "Conduct realistic, adaptive interviews with AI that evaluates in real-time.",
+    background: "lavender",
   },
   {
-    title: "Video interviews",
-    description: "Candidates can record from anywhere, anytime.",
-    Icon: VideocamOutlinedIcon,
-    color: "purple",
-    background: "purple",
-  },
-  {
-    title: "Smart scoring",
-    description: "Get instant, objective evaluations with detailed feedback.",
-    Icon: HubOutlinedIcon,
-    color: "blue",
+    title: "Detailed Analytics",
+    description:
+      "Get role-wise reports, skill breakdown and candidate insights in one place.",
     background: "blue",
   },
   {
-    title: "ATS integration",
-    description: "Sync with your existing workflow effortlessly.",
-    Icon: SyncAltOutlinedIcon,
-    color: "orange",
+    title: "AI Question Generation",
+    description: "Create role-specific, skill-based questions powered by AI.",
     background: "orange",
   },
   {
-    title: "Live coding rounds",
-    description: "Built-in code editor with multiple languages.",
-    Icon: CodeOutlinedIcon,
-    color: "pink",
-    background: "pink",
+    title: "Smart Evaluation",
+    description: "Get objective and consistent evaluations with AI scoring.",
+    background: "green",
   },
   {
-    title: "SOC 2 ready",
-    description: "Your data is secure and compliant.",
-    Icon: SecurityOutlinedIcon,
-    color: "purple",
-    background: "lavender",
+    title: "Multi-role Support",
+    description:
+      "Hire for any role — engineering, design, product, sales and more.",
+    background: "purple",
+  },
+  {
+    title: "Live Coding Interviews",
+    description: "Built-in code editor with real-time evaluation.",
+    background: "orange",
+  },
+  {
+    title: "ATS Integration",
+    description:
+      "Sync candidates and evaluations with your existing workflow.",
+    background: "blue",
+  },
+  {
+    title: "Secure & Reliable",
+    description:
+      "Your data is always secure with enterprise-grade protection.",
+    background: "pink",
   },
 ];
 

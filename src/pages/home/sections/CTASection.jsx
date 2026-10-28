@@ -21,7 +21,11 @@ function CTASection() {
       id="get-started"
       sx={ctaStyles.section}
     >
-      <Container maxWidth="lg">
+      <Container
+        maxWidth={false}
+        disableGutters
+        sx={ctaStyles.container(theme)}
+      >
         <Box
           component={motion.div}
           initial={ctaStyles.fadeInitial(distance)}

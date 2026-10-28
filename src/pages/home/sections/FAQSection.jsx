@@ -6,7 +6,6 @@ import {
   Box,
   Button,
   Container,
-  Paper,
   Stack,
   Typography,
 } from "@mui/material";
@@ -40,7 +39,11 @@ function FAQSection() {
       component="section"
       sx={faqStyles.section}
     >
-      <Container maxWidth="lg">
+      <Container
+        maxWidth={false}
+        disableGutters
+        sx={faqStyles.container(theme)}
+      >
         <Box
           component={motion.div}
           initial={faqStyles.headingInitial(distance)}

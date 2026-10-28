@@ -50,7 +50,11 @@ function TestimonialsSection() {
             component="section"
             sx={styles.section}
         >
-            <Container maxWidth="lg">
+            <Container
+                maxWidth={false}
+                disableGutters
+                sx={styles.container(theme)}
+            >
                 <Box
                     component={motion.div}
                     initial={styles.headingInitial(distance)}

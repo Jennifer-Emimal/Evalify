@@ -39,8 +39,9 @@ function PricingSection() {
       sx={pricingStyles.section}
     >
       <Container
-        maxWidth="lg"
-        sx={pricingStyles.container}
+        maxWidth={false}
+        disableGutters
+        sx={pricingStyles.container(theme)}
       >
         <Box
           component={motion.div}

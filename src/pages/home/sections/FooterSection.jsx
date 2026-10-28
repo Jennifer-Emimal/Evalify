@@ -20,7 +20,11 @@ function FooterSection() {
       component="footer"
       sx={footerStyles.section}
     >
-      <Container maxWidth="lg">
+      <Container
+        maxWidth={false}
+        disableGutters
+        sx={footerStyles.contentContainer(theme)}
+      >
         <Box
           component={motion.div}
           initial={footerStyles.fadeInitial(distance)}
