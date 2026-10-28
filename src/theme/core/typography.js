@@ -1,4 +1,6 @@
 
+import breakpoints from "./breakpoints";
+
 const typography = {
   fontFamily: '"Inter", "Plus Jakarta Sans", sans-serif',
 
@@ -88,7 +90,7 @@ const typography = {
   brandLogo: {
     fontSize: "0.98rem",
     fontWeight: 800,
-    lineHeight: 1.3,
+    lineHeight: 1,
     letterSpacing: "-0.04em",
   },
 
@@ -99,11 +101,11 @@ const typography = {
     lineHeight: 1.06,
     letterSpacing: "-0.045em",
 
-    "@media (min-width:600px)": {
+    [`@media (min-width:${breakpoints.values.sm}px)`]: {
       fontSize: "3.25rem",
     },
 
-    "@media (min-width:1200px)": {
+    [`@media (min-width:${breakpoints.values.wide}px)`]: {
       fontSize: "3.9rem",
     },
   },
@@ -137,7 +139,7 @@ const typography = {
     lineHeight: 1.3,
     whiteSpace: "nowrap",
 
-    "@media (min-width:600px)": {
+    [`@media (min-width:${breakpoints.values.sm}px)`]: {
       fontSize: "1.7rem",
     },
   },
@@ -154,9 +156,70 @@ const typography = {
     lineHeight: 1.2,
     letterSpacing: "-0.025em",
 
-    "@media (max-width:599px)": {
+    [`@media (max-width:${breakpoints.values.sm - 1}px)`]: {
       fontSize: "1.85rem",
     },
+  },
+
+  sectionHeading: {
+    fontSize: { xs: "2.1rem", sm: "2.5rem", md: "2.75rem" },
+    lineHeight: 1.18,
+  },
+
+  pricingHeading: {
+    fontSize: { xs: "1.9rem", md: "2.35rem" },
+  },
+
+  pricingBadge: {
+    fontSize: "0.73rem",
+    fontWeight: 700,
+  },
+
+  pricingControl: {
+    fontSize: "0.9rem",
+  },
+
+  pricingPlanDescription: {
+    fontSize: "0.8rem",
+  },
+
+  pricingFeature: {
+    fontSize: "0.8rem",
+    lineHeight: 1.4,
+  },
+
+  pricingPrice: {
+    fontSize: { xs: "2.1rem", md: "2.4rem" },
+  },
+
+  testimonialHeading: {
+    fontSize: { xs: "2.1rem", md: "2.45rem" },
+  },
+
+  testimonialRole: {
+    fontSize: "0.77rem",
+  },
+
+  faqQuestion: {
+    fontSize: { xs: "0.9rem", md: "1.05rem" },
+    fontWeight: 600,
+  },
+
+  ctaHeading: {
+    fontSize: { xs: "2rem", md: "2.7rem" },
+    lineHeight: 1.1,
+  },
+
+  howItWorksTitle: {
+    fontSize: "3.75rem",
+  },
+
+  footerDescription: {
+    fontSize: "0.8rem",
+  },
+
+  footerColumnHeading: {
+    fontSize: "0.85rem",
   },
 
   sectionDescription: {

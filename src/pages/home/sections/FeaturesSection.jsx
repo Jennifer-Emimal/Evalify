@@ -14,8 +14,8 @@ import {
   Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { motion } from "motion/react";
 
+import MotionReveal from "../../../components/common/MotionReveal";
 import SectionLabel from "../../../components/common/SectionLabel";
 import aiInterviewImage from "../../../assets/ai-interview.png";
 import analyticsImage from "../../../assets/detailed-analytics.png";
@@ -27,7 +27,6 @@ import questionGenerationImage from "../../../assets/ai-qn-generation.png";
 import securityImage from "../../../assets/secure-reliable.png";
 import evaluationImage from "../../../assets/smart-evaluation.png";
 import { FEATURES } from "../../../constants/homeContent";
-import useMotionSettings from "../../../hooks/useMotionSettings";
 import sectionStyles from "../../../theme/sectionStyles";
 
 const featureImages = [
@@ -85,13 +84,6 @@ function FeaturesSection() {
   const theme = useTheme();
   const styles = sectionStyles.featureSectionStyles;
 
-  const {
-    motionTheme,
-    duration,
-    stagger,
-    easing,
-  } = useMotionSettings(0.5);
-
   return (
     <Box
       id="features"
@@ -104,15 +96,7 @@ function FeaturesSection() {
         sx={styles.container(theme)}
       >
         {/* Section heading */}
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: motionTheme.distance.small,
-          }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration, ease: easing           }}
-        >
+        <MotionReveal distance="small">
           <Box sx={styles.header(theme)}>
             <SectionLabel>Powerful features</SectionLabel>
 
@@ -134,7 +118,7 @@ function FeaturesSection() {
               decisions — built for today's teams.
             </Typography>
           </Box>
-        </motion.div>
+        </MotionReveal>
 
         {/* Feature cards */}
         <Box sx={styles.grid(theme)}>
@@ -142,18 +126,10 @@ function FeaturesSection() {
             const { Icon, iconColor } = featureImages[index];
 
             return (
-              <Box
+              <MotionReveal
                 key={title}
-                component={motion.div}
                 sx={styles.cardMotion(theme, index)}
-                initial={{ opacity: 0, y: motionTheme.distance.medium }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration,
-                  delay: index * stagger,
-                  ease: easing,
-                }}
+                distance="medium"
               >
                 <Card
                   component="article"
@@ -195,28 +171,19 @@ function FeaturesSection() {
                     sx={styles.illustration(theme, index)}
                   />
                 </Card>
-              </Box>
+              </MotionReveal>
             );
           })}
 
           <Box sx={styles.dashboard(theme)}>
-            <motion.div
-              initial={{ opacity: 0, y: motionTheme.distance.small }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration,
-                delay: stagger,
-                ease: easing,
-              }}
-            >
+            <MotionReveal distance="small">
               <Box
                 component="img"
                 src={dashboardImage}
                 alt="Evalify AI interview dashboard with a candidate video interview, question panel and live audio controls"
                 sx={styles.dashboardImage(theme)}
               />
-            </motion.div>
+            </MotionReveal>
           </Box>
         </Box>
       </Container>

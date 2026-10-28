@@ -11,26 +11,19 @@ import {
   Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { motion } from "motion/react";
 
 import CheckIcon from "@mui/icons-material/Check";
 
 import SectionLabel from "../../../components/common/SectionLabel";
 import GradientText from "../../../components/common/GradientText";
+import MotionReveal from "../../../components/common/MotionReveal";
 import { PRICING_PLANS } from "../../../constants/homeContent";
-import useMotionSettings from "../../../hooks/useMotionSettings";
 
 function PricingSection() {
   const [yearly, setYearly] = useState(false);
   const theme = useTheme();
 
   const { pricingStyles } = theme;
-  const {
-    motionTheme,
-    duration,
-    stagger,
-    easing,
-  } = useMotionSettings(0.6);
 
   return (
     <Box
@@ -43,16 +36,7 @@ function PricingSection() {
         disableGutters
         sx={pricingStyles.container(theme)}
       >
-        <Box
-          component={motion.div}
-          sx={pricingStyles.headerMotion}
-          initial={pricingStyles.headerInitial(
-            motionTheme.distance.small
-          )}
-          whileInView={pricingStyles.visible}
-          viewport={pricingStyles.viewport}
-          transition={{ duration, ease: easing }}
-        >
+        <MotionReveal sx={pricingStyles.headerMotion}>
           <Box sx={pricingStyles.header}>
             <Box>
               <SectionLabel align="left">Simple pricing</SectionLabel>
@@ -100,25 +84,13 @@ function PricingSection() {
               </Button>
             </Box>
           </Box>
-        </Box>
+        </MotionReveal>
 
         <Box sx={pricingStyles.grid}>
-          {PRICING_PLANS.map((plan, index) => (
-            <Box
-              component={motion.div}
+          {PRICING_PLANS.map((plan) => (
+            <MotionReveal
               key={plan.name}
               sx={pricingStyles.cardMotion}
-              initial={pricingStyles.cardInitial(
-                motionTheme.distance.medium,
-                plan.popular
-              )}
-              whileInView={pricingStyles.visible}
-              viewport={pricingStyles.viewport}
-              transition={{
-                duration,
-                delay: index * stagger,
-                ease: easing,
-              }}
             >
               <Card
                 component="article"
@@ -208,7 +180,7 @@ function PricingSection() {
                   </Button>
                 </CardContent>
               </Card>
-            </Box>
+            </MotionReveal>
           ))}
         </Box>
       </Container>

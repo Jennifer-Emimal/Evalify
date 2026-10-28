@@ -1,20 +1,18 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { motion } from "motion/react";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import CheckIcon from "@mui/icons-material/Check";
 
+import MotionReveal from "../../../components/common/MotionReveal";
 import SectionLabel from "../../../components/common/SectionLabel";
 import interviewDashboard from "../../../assets/interview-dashboard.png";
 import { INTERVIEW_BENEFITS } from "../../../constants/homeContent";
-import useMotionSettings from "../../../hooks/useMotionSettings";
 import sectionStyles from "../../../theme/sectionStyles";
 
 function InterviewShowcaseSection() {
   const theme = useTheme();
   const styles = sectionStyles.interviewShowcaseStyles;
-  const { motionTheme, stagger, duration, easing } = useMotionSettings();
 
   return (
     <Box
@@ -24,15 +22,7 @@ function InterviewShowcaseSection() {
     >
       <Box sx={styles.layout(theme)}>
         <Box sx={styles.copyColumn(theme)}>
-          <motion.div
-            initial={{
-              opacity: 0,
-              x: -motionTheme.distance.medium,
-            }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration, ease: easing }}
-          >
+          <MotionReveal direction="left" distance="medium">
             <Stack sx={styles.content(theme)}>
               <SectionLabel align="left">Interview experience</SectionLabel>
 
@@ -55,30 +45,15 @@ function InterviewShowcaseSection() {
               </Typography>
 
               <Stack sx={styles.benefits(theme)}>
-                {INTERVIEW_BENEFITS.map((benefit, index) => (
-                  <motion.div
-                    key={benefit}
-                    initial={{
-                      opacity: 0,
-                      x: -motionTheme.distance.small,
-                    }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration,
-                      delay: (index + 1) * stagger,
-                      ease: easing,
-                    }}
-                  >
-                    <Stack direction="row" sx={styles.benefit(theme)}>
-                      <Box sx={styles.benefitIcon(theme)}>
-                        <CheckIcon />
-                      </Box>
-                      <Typography variant="body2" color="text.secondary">
-                        {benefit}
-                      </Typography>
-                    </Stack>
-                  </motion.div>
+                {INTERVIEW_BENEFITS.map((benefit) => (
+                  <Stack key={benefit} direction="row" sx={styles.benefit(theme)}>
+                    <Box sx={styles.benefitIcon(theme)}>
+                      <CheckIcon />
+                    </Box>
+                    <Typography variant="body2" color="text.secondary">
+                      {benefit}
+                    </Typography>
+                  </Stack>
                 ))}
               </Stack>
 
@@ -92,18 +67,11 @@ function InterviewShowcaseSection() {
                 Explore interviews
               </Button>
             </Stack>
-          </motion.div>
+          </MotionReveal>
         </Box>
 
-        <motion.div
-          initial={{ opacity: 0, x: motionTheme.distance.small }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{
-            duration,
-            delay: stagger,
-            ease: easing,
-          }}
+        <MotionReveal
+          direction="right"
           style={{
             width: "100%",
             height: "100%",
@@ -117,7 +85,7 @@ function InterviewShowcaseSection() {
             className="dashboard-image"
             sx={styles.image(theme)}
           />
-        </motion.div>
+        </MotionReveal>
       </Box>
     </Box>
   );

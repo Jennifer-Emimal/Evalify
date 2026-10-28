@@ -10,19 +10,17 @@ import {
     Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { motion } from "motion/react";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
+import MotionReveal from "../../../components/common/MotionReveal";
 import SectionLabel from "../../../components/common/SectionLabel";
 import sectionStyles from "../../../theme/sectionStyles";
 import { TESTIMONIALS } from "../../../constants/homeContent";
-import useMotionSettings from "../../../hooks/useMotionSettings";
 
 function TestimonialsSection() {
     const theme = useTheme();
     const styles = sectionStyles.testimonialsStyles;
-    const { duration, stagger, easing, distance } = useMotionSettings();
     const [activeIndex, setActiveIndex] = useState(0);
     const touchStartX = useRef(null);
 
@@ -55,14 +53,7 @@ function TestimonialsSection() {
                 disableGutters
                 sx={styles.container(theme)}
             >
-                <Box
-                    component={motion.div}
-                    initial={styles.headingInitial(distance)}
-                    whileInView={styles.visible}
-                    viewport={styles.viewport}
-                    transition={{ duration, ease: easing }}
-                    sx={styles.headingMotion}
-                >
+                <MotionReveal sx={styles.headingMotion}>
                     <Box>
                         <SectionLabel align="left">Customer stories</SectionLabel>
 
@@ -93,7 +84,7 @@ function TestimonialsSection() {
                             <ArrowForwardIosIcon fontSize="small" />
                         </IconButton>
                     </Stack>
-                </Box>
+                </MotionReveal>
 
                 <Box
                     sx={styles.carouselViewport}
@@ -110,55 +101,21 @@ function TestimonialsSection() {
                                 ];
 
                             return (
-                                <Box
+                                <MotionReveal
                                     key={item.name}
-                                    component={motion.div}
                                     layout
-                                    initial={styles.cardInitial(index, distance)}
-                                    whileInView={styles.visible}
-                                    viewport={styles.viewport}
-                                    transition={{
-                                        duration,
-                                        delay: index * stagger,
-                                        ease: easing,
-                                    }}
                                     sx={styles.cardMotion}
                                 >
                                     <Card component="article" sx={styles.card}>
                                         <CardContent sx={styles.cardContent}>
-                                            <Box
-                                                component={motion.div}
-                                                initial={styles.quoteInitial(
-                                                    theme.motion.distance.small
-                                                )}
-                                                whileInView={styles.visible}
-                                                viewport={styles.viewport}
-                                                transition={{
-                                                    duration,
-                                                    delay: stagger,
-                                                    ease: easing,
-                                                }}
+                                            <Typography
+                                                variant="body1"
+                                                sx={styles.quote}
                                             >
-                                                <Typography
-                                                    variant="body1"
-                                                    sx={styles.quote}
-                                                >
-                                                    “{item.quote}”
-                                                </Typography>
-                                            </Box>
+                                                “{item.quote}”
+                                            </Typography>
 
                                             <Stack
-                                                component={motion.div}
-                                                initial={styles.profileInitial(
-                                                    theme.motion.distance.small
-                                                )}
-                                                whileInView={styles.visible}
-                                                viewport={styles.viewport}
-                                                transition={{
-                                                    duration,
-                                                    delay: stagger * 2,
-                                                    ease: easing,
-                                                }}
                                                 direction="row"
                                                 sx={styles.profile}
                                             >
@@ -182,11 +139,11 @@ function TestimonialsSection() {
                                                     >
                                                         {item.role}
                                                     </Typography>
-                                                </Box>
+                                                    </Box>
                                             </Stack>
                                         </CardContent>
                                     </Card>
-                                </Box>
+                                </MotionReveal>
                             );
                         })}
                     </Box>

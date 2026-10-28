@@ -10,39 +10,15 @@ function HeroCTAButtons({ sx = {}, inverted = false }) {
       sx={{ mt: 3, flexWrap: "wrap", ...sx }}
     >
       <Button
-        variant="contained"
+        variant={inverted ? "heroPrimaryInverted" : "contained"}
         endIcon={<ArrowForwardIcon />}
-        sx={
-          inverted
-            ? {
-                bgcolor: "common.white",
-                color: "primary.main",
-                "&:hover": { bgcolor: "grey.100" },
-              }
-            : undefined
-        }
       >
         Start free
       </Button>
 
       <Button
+        variant={inverted ? "heroSecondaryInverted" : "heroSecondary"}
         startIcon={<PlayArrowIcon />}
-        sx={{
-          backgroundColor: inverted ? "transparent" : "background.paper",
-          color: inverted ? "common.white" : "text.primary",
-          border: "1px solid",
-          borderColor: inverted
-            ? "rgba(255, 255, 255, 0.35)"
-            : "divider",
-          "&:hover": {
-            backgroundColor: inverted
-              ? "rgba(255, 255, 255, 0.08)"
-              : "background.soft",
-            borderColor: inverted
-              ? "rgba(255, 255, 255, 0.55)"
-              : "divider",
-          },
-        }}
       >
         Watch video
       </Button>

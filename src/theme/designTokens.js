@@ -38,25 +38,21 @@ const designTokens = {
   motion: {
     duration: {
       fast: 180,
-      reveal: 500,
-      mask: 720,
+      reveal: 360,
     },
 
     easing: {
       standard: "cubic-bezier(0.2, 0, 0, 1)",
       enter: "cubic-bezier(0.16, 1, 0.3, 1)",
-      mask: "cubic-bezier(0.76, 0, 0.24, 1)",
     },
 
     distance: {
-      small: 10,
-      medium: 24,
+      small: 6,
+      medium: 12,
     },
 
-    stagger: 72,
-
     observer: {
-      rootMargin: "0px 0px -40px 0px",
+      rootMargin: "0px 0px -60px 0px",
       threshold: 0.12,
       lazyRootMargin: "600px 0px",
     },
@@ -96,8 +92,6 @@ const designTokens = {
       sm: 5,
       lg: 9,
     },
-    howItWorksTitleFontSize: "3.75rem",
-
     connectorOffset: 5.875,
     connectorThickness: 0.25,
     connectorTop: 6,

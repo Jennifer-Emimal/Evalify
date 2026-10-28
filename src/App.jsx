@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Box, CircularProgress } from "@mui/material";
+import { MotionConfig } from "motion/react";
 
 const Home = lazy(() => import("./pages/home/Home"));
 function PageLoadingFallback() {
@@ -25,11 +26,13 @@ function PageLoadingFallback() {
 function App() {
     return (
         <BrowserRouter>
-            <Suspense fallback={<PageLoadingFallback />}>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                </Routes>
-            </Suspense>
+            <MotionConfig reducedMotion="user">
+                <Suspense fallback={<PageLoadingFallback />}>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                    </Routes>
+                </Suspense>
+            </MotionConfig>
         </BrowserRouter>
     );
 }

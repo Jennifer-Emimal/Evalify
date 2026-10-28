@@ -18,8 +18,21 @@ const palette = {
     default: "#FFFFFF",
     paper: "#FFFFFF",
     hero: "#FBFBFA",
+    heroSurface: "#F7F6F3",
+    navigationOverlay: "rgba(255, 255, 255, 0.98)",
     soft: "#e6e6e6",
     accent: "#EEF3FF",
+  },
+
+  cta: {
+    buttonBorder: "rgba(255, 255, 255, 0.35)",
+    buttonBorderHover: "rgba(255, 255, 255, 0.55)",
+    buttonHover: "rgba(255, 255, 255, 0.08)",
+    bannerBorder: "rgba(255, 255, 255, 0.2)",
+    bannerLabel: "rgba(255, 255, 255, 0.62)",
+    bannerText: "rgba(255, 255, 255, 0.72)",
+    ringOuter: "rgba(255, 255, 255, 0.025)",
+    ringInner: "rgba(255, 255, 255, 0.035)",
   },
 
   text: {

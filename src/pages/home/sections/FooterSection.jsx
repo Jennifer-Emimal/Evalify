@@ -1,19 +1,17 @@
 
 import { Box, Container, Stack, Typography, IconButton } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { motion } from "motion/react";
 
 import BrandLogo from "../../../components/common/BrandLogo";
+import MotionReveal from "../../../components/common/MotionReveal";
 import {
   FOOTER_COLUMNS,
   SOCIAL_LINKS,
 } from "../../../constants/homeContent";
-import useMotionSettings from "../../../hooks/useMotionSettings";
 
 function FooterSection() {
   const theme = useTheme();
   const { footerStyles } = theme;
-  const { duration, stagger, easing, distance } = useMotionSettings();
 
   return (
     <Box
@@ -25,28 +23,10 @@ function FooterSection() {
         disableGutters
         sx={footerStyles.contentContainer(theme)}
       >
-        <Box
-          component={motion.div}
-          initial={footerStyles.fadeInitial(distance)}
-          whileInView={footerStyles.visible}
-          viewport={footerStyles.viewport}
-          transition={footerStyles.transition(duration, easing)}
-          sx={footerStyles.containerMotion}
-        >
+        <MotionReveal sx={footerStyles.containerMotion}>
           <Box sx={footerStyles.grid}>
             {/* Brand */}
-            <Box
-              component={motion.div}
-              initial={footerStyles.fadeInitial(distance)}
-              whileInView={footerStyles.visible}
-              viewport={footerStyles.viewport}
-              transition={footerStyles.transition(
-                duration,
-                easing,
-                stagger
-              )}
-              sx={footerStyles.brandColumn}
-            >
+            <Box sx={footerStyles.brandColumn}>
               <Box sx={footerStyles.brandLogo}>
                 <BrandLogo />
               </Box>
@@ -78,20 +58,8 @@ function FooterSection() {
             </Box>
 
             {/* Navigation columns */}
-            {FOOTER_COLUMNS.map((column, index) => (
-              <Box
-                key={column.title}
-                component={motion.div}
-                initial={footerStyles.slideInitial(index, distance)}
-                whileInView={footerStyles.visible}
-                viewport={footerStyles.viewport}
-                transition={footerStyles.transition(
-                  duration,
-                  easing,
-                  stagger * (index + 2)
-                )}
-                sx={footerStyles.navigationColumn}
-              >
+            {FOOTER_COLUMNS.map((column) => (
+              <Box key={column.title} sx={footerStyles.navigationColumn}>
                 <Typography
                   component="h3"
                   variant="h3"
@@ -117,7 +85,7 @@ function FooterSection() {
               </Box>
             ))}
           </Box>
-        </Box>
+        </MotionReveal>
       </Container>
     </Box>
   );

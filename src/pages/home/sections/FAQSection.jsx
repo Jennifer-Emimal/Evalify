@@ -10,28 +10,20 @@ import {
   Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { motion } from "motion/react";
 
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 
+import MotionReveal from "../../../components/common/MotionReveal";
 import SectionLabel from "../../../components/common/SectionLabel";
 import GradientText from "../../../components/common/GradientText";
 import { FAQS } from "../../../constants/homeContent";
-import useMotionSettings from "../../../hooks/useMotionSettings";
 
 function FAQSection() {
   const [openIndex, setOpenIndex] = useState(-1);
   const theme = useTheme();
 
   const { faqStyles } = theme;
-  const { duration, stagger, easing, distance, smallDistance } =
-    useMotionSettings();
-
-  const visibleTransition = {
-    duration,
-    ease: easing,
-  };
 
   return (
     <Box
@@ -44,14 +36,7 @@ function FAQSection() {
         disableGutters
         sx={faqStyles.container(theme)}
       >
-        <Box
-          component={motion.div}
-          initial={faqStyles.headingInitial(distance)}
-          whileInView={faqStyles.visible}
-          viewport={faqStyles.viewport}
-          transition={visibleTransition}
-          sx={faqStyles.mainLayout}
-        >
+        <MotionReveal sx={faqStyles.mainLayout}>
           {/* Left column */}
           <Box sx={faqStyles.leftColumn}>
             <Box sx={faqStyles.headingMotion}>
@@ -90,30 +75,12 @@ function FAQSection() {
           </Box>
 
           {/* Right column: FAQ list */}
-          <Stack
-            component={motion.div}
-            initial={{ opacity: 0, x: distance }}
-            whileInView={faqStyles.visible}
-            viewport={faqStyles.viewport}
-            transition={visibleTransition}
-            sx={faqStyles.faqListMotion}
-          >
+          <Stack sx={faqStyles.faqListMotion}>
             {FAQS.map((faq, index) => {
               const isOpen = openIndex === index;
 
               return (
-                <Box
-                  key={faq.question}
-                  component={motion.div}
-                  initial={faqStyles.faqItemInitial(smallDistance)}
-                  whileInView={faqStyles.visible}
-                  viewport={faqStyles.viewport}
-                  transition={{
-                    duration,
-                    delay: index * stagger * 0.5,
-                    ease: easing,
-                  }}
-                >
+                <Box key={faq.question}>
                   <Accordion
                     expanded={isOpen}
                     onChange={() =>
@@ -153,7 +120,7 @@ function FAQSection() {
               );
             })}
           </Stack>
-        </Box>
+        </MotionReveal>
       </Container>
     </Box>
   );

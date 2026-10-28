@@ -1,15 +1,10 @@
 
 import { Container, Paper, Typography } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import { motion } from "motion/react";
 
+import MotionReveal from "../../../components/common/MotionReveal";
 import { TRUSTED_COMPANIES } from "../../../constants/homeContent";
-import useMotionSettings from "../../../hooks/useMotionSettings";
 
 function TrustedCompaniesSection() {
-  const theme = useTheme();
-  const { stagger, duration, easing } = useMotionSettings();
-
   return (
     <Paper
       component="section"
@@ -18,21 +13,7 @@ function TrustedCompaniesSection() {
     >
       <Container maxWidth={false} disableGutters>
          <Paper component="div" variant="trustedCompaniesInner">
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: theme.motion.distance.small,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{ once: true }}
-            transition={{
-              duration,
-              ease: easing,
-            }}
-          >
+          <MotionReveal>
             <Typography
               component="p"
               variant="sectionLabel"
@@ -41,28 +22,16 @@ function TrustedCompaniesSection() {
             >
               Trusted by modern teams
             </Typography>
-          </motion.div>
+          </MotionReveal>
 
-          <Paper component="div" variant="trustedCompaniesGrid">
-            {TRUSTED_COMPANIES.map(({ name, Icon }, index) => (
-              <motion.div
-                key={name}
-                initial={{
-                  opacity: 0,
-                  scale: 0.92,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  scale: 1,
-                }}
-                viewport={{ once: true }}
-                transition={{
-                  duration,
-                  delay: index * stagger,
-                  ease: easing,
-                }}
-              >
-                <Paper component="div" variant="trustedCompanyLogo">
+          <MotionReveal sx={{ flex: 1, minWidth: 0 }}>
+            <Paper component="div" variant="trustedCompaniesGrid">
+              {TRUSTED_COMPANIES.map(({ name, Icon }) => (
+                <Paper
+                  key={name}
+                  component="div"
+                  variant="trustedCompanyLogo"
+                >
                   <Icon variant="trustedCompanyIcon" />
 
                   <Typography
@@ -72,9 +41,9 @@ function TrustedCompaniesSection() {
                     {name}
                   </Typography>
                 </Paper>
-              </motion.div>
-            ))}
-          </Paper>
+              ))}
+            </Paper>
+          </MotionReveal>
         </Paper>
       </Container>
     </Paper>

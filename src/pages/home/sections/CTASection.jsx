@@ -1,19 +1,13 @@
 
 import { Box, Container, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { motion } from "motion/react";
 
 import HeroCTAButtons from "../../../components/common/HeroCTAButtons";
-import useMotionSettings from "../../../hooks/useMotionSettings";
+import MotionReveal from "../../../components/common/MotionReveal";
 
 function CTASection() {
   const theme = useTheme();
   const { ctaStyles } = theme;
-  const {
-    duration,
-    easing,
-    distance,
-  } = useMotionSettings();
 
   return (
     <Box
@@ -26,14 +20,7 @@ function CTASection() {
         disableGutters
         sx={ctaStyles.container(theme)}
       >
-        <Box
-          component={motion.div}
-          initial={ctaStyles.fadeInitial(distance)}
-          whileInView={ctaStyles.visible}
-          viewport={{ once: true }}
-          transition={{ duration, ease: easing }}
-          sx={ctaStyles.banner(theme)}
-        >
+        <MotionReveal sx={ctaStyles.banner(theme)}>
           <Typography
             component="p"
             variant="sectionLabel"
@@ -56,7 +43,7 @@ function CTASection() {
           </Typography>
 
           <HeroCTAButtons inverted sx={{ mt: 2 }} />
-        </Box>
+        </MotionReveal>
       </Container>
     </Box>
   );
